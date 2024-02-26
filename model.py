@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 
+
 """
 tuple: (kernel size, filter size, stride, padding)
 "M": maxpooling with stride 2x2 and kernel 2x2
@@ -27,6 +28,7 @@ architecture_config = [
     (3, 1024, 1, 1),
 ]
 
+
 class CNNBlock(nn.Module):
     def __init__(self, in_channels, out_channels, **kwargs):
         super().__init__()
@@ -37,7 +39,8 @@ class CNNBlock(nn.Module):
     def forward(self, x):
         return self.leakyrelu(self.batchnorm(self.conv(x)))
 
-class YoloV1(nn.Module):
+
+class Yolov1(nn.Module):
     def __init__(self, in_channels, out_channels,**kwargs):
         super().__init__()
         self.architecture = architecture_config
