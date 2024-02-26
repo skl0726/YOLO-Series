@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from collections import Counter
 
+
 def intersection_over_union(boxes_preds, boxes_labels, box_format="corners"):
     """
     Calculates intersection over union
@@ -48,6 +49,7 @@ def intersection_over_union(boxes_preds, boxes_labels, box_format="corners"):
     box2_area = abs((box2_x2 - box2_x1) * (box2_y2 - box2_y1))
 
     return intersection / (box1_area + box2_area - intersection + 1e-6)
+
 
 def non_max_suppression(bboxes, iou_threshold, threshold, box_format="corners"):
     """
